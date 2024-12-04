@@ -1,0 +1,95 @@
+<div
+  class="form-container my-16 w-full max-w-lg py-8 px-6 gap-5 mx-auto rounded-2xl border-2 border-solid border-transparent"
+>
+  <form class="form" action="https://formspree.io/f/mdknnyej" method="POST">
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required />
+    </div>
+    <div class="form-group">
+      <label for="message">¿Cómo podemos ayudarte?</label>
+      <textarea
+        id="message"
+        name="message"
+        class="w-full bg-transparent border px-4 py-3 rounded-lg border-solid border-[#414141] focus:border-[#b80000]"
+        rows="4"
+        required
+      ></textarea>
+    </div>
+    <button
+      class="form-submit-btn flex items-center justify-center w-full sm:w-2/5 mt-2 px-4 py-3 rounded-md border border-solid border-[#414141] hover:bg-white hover:border-white cursor-pointer"
+      type="submit">Enviar</button>
+  </form>
+</div>
+<style>
+  .form-container {
+    background: linear-gradient(#212121, #212121) padding-box, linear-gradient(145deg, transparent 1%, #950000, #510000) border-box;
+  }
+
+  .form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .form-group label {
+    color: #717171;
+    font-weight: 600;
+    font-size: 12px;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    border-radius: 8px;
+    color: #fff;
+    background-color: transparent;
+    border: 1px solid #414141;
+    padding: 12px 16px;
+  }
+
+  .form-group textarea {
+    resize: none;
+    height: 60px; /* Adjust height for 60% smaller size */
+  }
+
+  .form-group input:focus,
+  .form-group textarea:focus {
+    border-color: #ffffff;
+    outline-color: #ffffff;
+  }
+
+  .form-submit-btn {
+    background: #313131;
+    color: #717171;
+  }
+
+  .form-submit-btn:hover {
+    background-color: #fff;
+    border-color: #fff;
+  }
+
+  .form-submit-btn:active {
+    transform: scale(0.95);
+  }
+
+  @media (min-width: 640px) {
+    .form-container {
+      max-width: 700px;
+      padding: 32px;
+    }
+
+    .form {
+      gap: 20px;
+    }
+
+    .form-group {
+      gap: 5px;
+    }
+  }
+</style>
