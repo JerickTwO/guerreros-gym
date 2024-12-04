@@ -4,60 +4,56 @@ import Instagram from "./icons/Instagram.astro";
 import Facebook from "./icons/Facebook.astro";
 ---
 
-
-<footer class="text-white mt-10 mb-4"> 
-  
+<footer class="text-white mt-10 mb-4">
   <div class="mb-4">
     <img
       id="logo"
       class="size-[200px] mx-auto"
-      src="./../public/logo.png"  
-      alt="Guerros gym center logo"
+      src="./../public/logo.png"
+      alt="Guerreros Gym Center logo"
     />
   </div>
 
-  
-  <div class="flex justify-center space-x-8 mb-6 mt-4"> 
- 
+  <div class="flex justify-center space-x-8 mb-6 mt-4">
     <Instagram id="instagram-icon" class="social-icon size-8" />
-    <Facebook id="facebook-icon" class="social-icon size-8"/>
-    <Whatsapp id="whatsapp-icon" class="social-icon size-8"/>
+    <Facebook id="facebook-icon" class="social-icon size-8" />
+    <Whatsapp id="whatsapp-icon" class="social-icon size-8" />
   </div>
 
- 
-  <div id="copyright" class="copyright">Creado por Guerreros Gym Center (2024) &#169;</div>
-
+  <div id="copyright" class="text-center">
+    Creado por Guerreros Gym Center (2024) &#169;
+  </div>
 
   <script>
-    let prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)").matches;
-    const logo = document.getElementById('logo');
-    const instagramIcon = document.getElementById('instagram-icon');
-    const facebookIcon = document.getElementById('facebook-icon');
-    const whatsappIcon = document.getElementById('whatsapp-icon');
-    const copyrightText = document.getElementById('copyright');
+    let prefersDarkScheme = window.matchMedia(
+      "(prefers-color-scheme: dark)",
+    ).matches;
+    const logo = document.getElementById("logo");
+    const instagramIcon = document.getElementById("instagram-icon");
+    const facebookIcon = document.getElementById("facebook-icon");
+    const whatsappIcon = document.getElementById("whatsapp-icon");
+    const copyrightText = document.getElementById("copyright");
 
     function updateLogoTheme() {
       const logoDark = "./../public/logo.png";
       const logoLight = "./../public/logo_2.png";
-      
+
       if (prefersDarkScheme) {
         logo.src = logoDark;
-        copyrightText.style.color = "white"; 
+        copyrightText.style.color = "white";
       } else {
         logo.src = logoLight;
-        copyrightText.style.color = "black"; 
+        copyrightText.style.color = "black";
       }
     }
 
-
     function updateSocialIconsTheme() {
-
       if (!prefersDarkScheme) {
         instagramIcon.style.filter = "invert(100%)";
         facebookIcon.style.filter = "invert(100%)";
         whatsappIcon.style.filter = "invert(100%)";
       } else {
-        instagramIcon.style.filter = "none"; 
+        instagramIcon.style.filter = "none";
         facebookIcon.style.filter = "none";
         whatsappIcon.style.filter = "none";
       }
@@ -66,10 +62,12 @@ import Facebook from "./icons/Facebook.astro";
     updateLogoTheme();
     updateSocialIconsTheme();
 
-    window.matchMedia("(prefers-color-scheme: dark)").addEventListener('change', (e) => {
-      prefersDarkScheme = e.matches;
-      updateLogoTheme();
-      updateSocialIconsTheme();
-    });
+    window
+      .matchMedia("(prefers-color-scheme: dark)")
+      .addEventListener("change", (e) => {
+        prefersDarkScheme = e.matches;
+        updateLogoTheme();
+        updateSocialIconsTheme();
+      });
   </script>
-
+</footer>

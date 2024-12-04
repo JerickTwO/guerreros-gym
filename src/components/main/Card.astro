@@ -34,25 +34,14 @@ const SPECIALITY = [
     icon: [TAGS.ARM],
     content:
       "Aumenta tu masa muscular con nuestro programa de hipertrofia, diseñado para maximizar el crecimiento muscular mediante entrenamientos específicos y una nutrición adecuada.",
-<<<<<<< HEAD
     styleBg: "bg-zinc-800 hover:bg-zinc-600",
-=======
-
-    styleBg:"bg-zinc-800 hover:bg-zinc-600",
->>>>>>> 683ea640fd26edd17a5b30abbf4d7d150621ff4f
   },
   {
     title: "Fuerza",
     icon: [TAGS.DUMBBELL],
     content:
-<<<<<<< HEAD
       "Desarrolla tu fuerza con nuestros entrenamientos personalizados, enfocados en mejorar tu capacidad física y rendimiento mediante ejercicios de alta intensidad.",
     styleBg: "bg-zinc-800 hover:bg-zinc-600",
-=======
-    "Desarrolla tu fuerza con nuestros entrenamientos personalizados, enfocados en mejorar tu capacidad física y rendimiento mediante ejercicios de alta intensidad.",
-
-    styleBg:"bg-zinc-800 hover:bg-zinc-600",
->>>>>>> 683ea640fd26edd17a5b30abbf4d7d150621ff4f
   },
   {
     title: "Adelgazar",
@@ -65,37 +54,13 @@ const SPECIALITY = [
   {
     title: "Resistencia",
     icon: [TAGS.RUN],
-<<<<<<< HEAD
     content:
       "Mejora tu resistencia con nuestras rutinas especializadas, para aumentar tu capacidad cardiovascular y muscular, permitiéndote entrenar por más tiempo y con más intensidad.",
     styleBg: "bg-zinc-800 hover:bg-zinc-600",
-=======
-
-    content:"Mejora tu resistencia con nuestras rutinas especializadas, para aumentar tu capacidad cardiovascular y muscular, permitiéndote entrenar por más tiempo y con más intensidad.",
-    styleBg:"bg-zinc-800 hover:bg-zinc-600",
->>>>>>> 683ea640fd26edd17a5b30abbf4d7d150621ff4f
   },
 ];
 ---
 
-<<<<<<< HEAD
-<article class="flex flex-wrap justify-center items-center gap-4 min-h-screens">
-  {
-    SPECIALITY.map(({ title, icon, content, styleBg }) => (
-      <section
-        class={` ${styleBg} py-10 flex flex-col items-center  w-[300px]  text-white`}
-      >
-        <header class="w-40">
-          {icon.map((tag) => (
-            <tag.icon class="" />
-          ))}
-        </header>
-        <h2 class="text-4xl font-bold mb-2">{title}</h2>
-      </section>
-    ))
-  }
-</article>
-=======
 <article class="grid gap-5 m-12 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4">
   {SPECIALITY.map(({ title, icon, content, styleBg }) => (
     <section class={` ${styleBg} p-6 rounded-lg text-white w-full`}>
@@ -111,4 +76,3 @@ const SPECIALITY = [
   ))}
 </article>
 
->>>>>>> 683ea640fd26edd17a5b30abbf4d7d150621ff4f
