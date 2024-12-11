@@ -1,340 +1,118 @@
 ---
 import List from "../icons/List.astro";
-const INFO_ONE = [
+const MEMBERSHIP_PLANS = [
   {
-    text: "No setup ",
+    name: "Trimestral",
+    price: "$60/mes",
+    features: [
+      "Acceso ilimitado a máquinas y pesas",
+      "2 clases grupales de cortesía al mes",
+      "Sesión de evaluación física inicial gratuita",
+    ],
+    buttonText: "¡Únete Ahora!",
+    link: "https://api.whatsapp.com/send?phone=+593985285463&text=Hola!%20Estoy%20interesado%20en%20el%20plan%20Trimestral.",
   },
   {
-    text: "No setup",
+    name: "Mensual",
+    price: "$25/mes",
+    features: [
+      "Acceso a todas las áreas del gimnasio",
+      "10% de descuento en productos de la tienda",
+    ],
+    buttonText: "Elige este Plan",
+    isPopular: true,
+    link: "https://api.whatsapp.com/send?phone=+593985285463&text=Hola!%20Estoy%20interesado%20en%20el%20plan%20Mensual.",
   },
   {
-    text: "Speed",
-  },
-];
-const INFO_TWO = [
-{
-  text: "No setup",
-},  {
-  text: "Hidden fees",
-},
-  {
-    text: "Original",
-  },
-];
-const INFO_TREEEEE= [
-  {
-    text: "Electric ",
-  },
-  {
-    text: "Monthly",
-  },
-  {
-    text: "No setup",
+    name: "Anual",
+    price: "$190/año",
+    features: [
+      "Membresía premium con acceso a zona VIP",
+      "Entrenador personal una vez al mes",
+      "Acceso prioritario a nuevos equipos y servicios",
+    ],
+    buttonText: "Plan Exclusivo",
+    link: "https://api.whatsapp.com/send?phone=+593985285463&text=Hola!%20Estoy%20interesado%20en%20el%20plan%20Anual.",
   },
 ];
 ---
 
-<section>
-  <div class="container max-w-full mx-auto py-12 ">
+<section id="pricing">
+  <div class="container max-w-full mx-auto py-12">
     <h2
-    class="text-center text-5xl dark:text-gray-300 text-gray-700 font-extrabold leading-snug tracking-wider">
-      Membresias
+      class="text-center text-5xl dark:text-gray-300 text-gray-700 font-extrabold leading-snug tracking-wider"
+    >
+      Membresías
     </h2>
     <p class="text-center text-lg dark:text-gray-300 text-gray-700 mt-2 px-4">
-      Encuentra el plan perfecto para tu estilo de vida y comienza a mejorar tu salud hoy mismo.
+      Encuentra el plan perfecto para tu estilo de vida y comienza a mejorar tu
+      salud hoy mismo.
     </p>
     <div
       class="h-1 mx-auto bg-indigo-200 dark:bg-white w-24 opacity-75 mt-4 rounded"
-    ></div>
+    >
+    </div>
 
     <div class="max-w-full md:max-w-6xl mx-auto my-3 md:px-8">
-      <div class="relative block flex flex-col md:flex-row items-center">
-         <!-- Card Trimestral -->
-        <div
-          class="w-11/12 max-w-sm sm:w-3/5 lg:w-1/3 sm:my-5 my-8 relative z-0 bg-white dark:bg-black rounded-lg shadow-lg border border-gray-200 dark:border-gray-700"
-        >
-          <div
-            class= "bg-white dark:bg-black text-black dark:text-white rounded-lg shadow-inner shadow-lg overflow-hidden"
-          >
-            <div
-              class="block text-left text-sm sm:text-md max-w-sm mx-auto mt-2 px-8 lg:px-6"
-            >
-              <h2
-                class="text-lg font-medium uppercase p-3 pb-0 text-center tracking-wide"
+      <div class="relative block flex flex-col lg:flex-row items-center">
+        {
+          MEMBERSHIP_PLANS.map((plan) => (
+            <div class="w-11/12 max-w-sm sm:w-3/5 lg:w-1/3 sm:my-5 my-8 relative z-0 bg-white dark:bg-black rounded-lg shadow-lg border border-gray-200 dark:border-gray-700">
+              <div
+                class={`text-sm leading-none rounded-t-lg ${plan.isPopular ? "bg-gray-200" : "bg-white"} text-black font-semibold uppercase py-4 text-center tracking-wide`}
               >
-                Trimestral
-              </h2>
-              <h2 class="text-sm text-gray-500 text-center pb-6">
-                <span class="text-2xl">$60/mes</span>
-              </h2>
-
-              Stripe offers everything needed to run an online business at
-              scale. Get in touch for details.
+                {plan.isPopular ? "Más popular" : ""}
+              </div>
+              <div class="block text-left text-sm sm:text-md max-w-sm mx-auto mt-2 px-8 lg:px-6">
+                <h2 class="text-lg font-medium uppercase p-3 pb-0 text-center tracking-wide">
+                  {plan.name}
+                </h2>
+                <h2 class="text-sm text-gray-500 text-center pb-6">
+                  <span class="text-2xl">{plan.price}</span>
+                </h2>
+              </div>
+              <div class="flex px-5 justify-start sm:justify-start mt-3">
+                <ul>
+                  {plan.features.map((feature) => (
+                    <li class="flex items-center">
+                      <div class="rounded-full fill-current text-green-700">
+                        <svg
+                          class="w-6 h-6 align-middle"
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        >
+                          <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                          <polyline points="22 4 12 14.01 9 11.01" />
+                        </svg>
+                      </div>
+                      <span class="text-lg ml-3 dark:text-black">
+                        {feature}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div class="flex items-center p-8 uppercase">
+                <a
+                  href={plan.link}
+                  class="mt-3 text-lg font-semibold bg-black w-full text-white rounded-lg px-6 py-3 block shadow-xl hover:bg-gray-700 text-center"
+                >
+                  {plan.buttonText}
+                </a>
+              </div>
             </div>
-
-            <div class="flex flex-wrap mt-3 px-6">
-              <ul>
-                <li class="flex items-center">
-                  <div class="rounded-full p-2 fill-current text-green-700">
-                    <svg
-                      class="w-6 h-6 align-middle"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    >
-                      <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-                      <polyline points="22 4 12 14.01 9 11.01"></polyline>
-                    </svg>
-                  </div>
-                  <span class="text-lg ml-3 dark:text-black">No setup</span>
-                </li>
-                <li class="flex items-center">
-                  <div class="rounded-full p-2 fill-current text-green-700">
-                    <svg
-                      class="w-6 h-6 align-middle"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    >
-                      <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-                      <polyline points="22 4 12 14.01 9 11.01"></polyline>
-                    </svg>
-                  </div>
-                  <span class="text-lg ml-3 dark:text-black">No setups</span>
-                </li>
-                <li class="flex items-center">
-                  <div class="rounded-full p-2 fill-current text-green-700">
-                    <svg
-                      class="w-6 h-6 align-middle"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    >
-                      <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-                      <polyline points="22 4 12 14.01 9 11.01"></polyline>
-                    </svg>
-                  </div>
-                  <span class="text-lg ml-3 dark:text-black">Speed</span>
-                </li>
-              </ul>
-            </div>
-            <div class="block items-center p-8 uppercase">
-              <button
-                class="mt-3 text-lg font-semibold bg-black w-full text-white rounded-lg px-6 py-3 block shadow-xl hover:bg-gray-700"
-              >
-                Seleccionar
-              </button>
-            </div>
-          </div>
-        </div>
-
-
-        <div
-          class="w-full max-w-md sm:w-2/3 lg:w-1/3 sm:my-5 my-8 relative z-10 bg-white dark:bg-black rounded-lg shadow-lg border border-gray-300 dark:border-gray-700"
-        >
-          <div
-            class="text-sm leading-none rounded-t-lg bg-gray-200 text-black font-semibold uppercase py-4 text-center tracking-wide"
-          >
-            Más popular
-          </div>
-          <div
-            class="block text-left text-sm sm:text-md max-w-sm mx-auto mt-2 px-8 lg:px-6"
-          >
-            <h2
-              class="text-lg font-medium uppercase p-3 pb-0 text-center tracking-wide "
-            >
-              Mensual
-            </h2>
-            <h2 class="text-sm text-gray-500 text-center pb-6 ">
-              <span class="text-2xl">$25/mes</span> 
-            </h2>
-
-            Stripe offers everything needed to run an online business at scale.
-            Get in touch for details.
-          </div>
-          <div class="flex pl-12 justify-start sm:justify-start mt-3">
-            <ul>
-              <li class="flex items-center">
-                <div class="rounded-full p-2 fill-current text-green-700">
-                  <svg
-                    class="w-6 h-6 align-middle"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  >
-                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
-                  </svg>
-                </div>
-                <span class="text-lg ml-3 dark:text-black">No setup</span>
-              </li>
-              <li class="flex items-center">
-                <div class="rounded-full p-2 fill-current text-green-700">
-                  <svg
-                    class="w-6 h-6 align-middle"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  >
-                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
-                  </svg>
-                </div>
-                <span class="text-lg ml-3 dark:text-black">Hidden fees</span>
-              </li>
-              <li class="flex items-center">
-                <div class="rounded-full p-2 fill-current text-green-700">
-                  <svg
-                    class="w-6 h-6 align-middle"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  >
-                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
-                  </svg>
-                </div>
-                <span class="text-lg ml-3 dark:text-black">Original</span>
-              </li>
-            </ul>
-          </div>
-
-          <div class="flex items-center p-8 uppercase">
-            <button
-              class= "mt-3 text-lg font-semibold bg-black w-full text-white rounded-lg px-6 py-3 block shadow-xl hover:bg-gray-700">
-              Select
-            </button>
-          </div>
-        </div>
-
-
-        <div
-          class="w-11/12 max-w-sm sm:w-3/5 lg:w-1/3 sm:my-5 my-8 relative z-0 rounded-lg shadow-lg md:-mr-4 border border-gray-300 dark:border-gray-700"
-        >
-          <div
-            class="bg-white dark:bg-black text-black dark:text-white rounded-lg shadow-inner shadow-lg overflow-hidden"
-          >
-            <div
-              class="block text-left text-sm sm:text-md max-w-sm mx-auto mt-2 px-8 lg:px-6"
-            >
-              <h2
-                class="text-lg font-medium uppercase p-3 pb-0 text-center tracking-wide"
-              >
-                Anual
-              </h2>
-              <h2 class="text-sm text-gray-500 text-center pb-6">
-                <span class="text-2xl">$120/mes</span>
-              </h2>
-
-              Stripe offers everything needed to run an online business at
-              scale. Get in touch for details.
-            </div>
-            <div class="flex flex-wrap mt-3 px-6">
-              <ul>
-                <li class="flex items-center">
-                  <div class="rounded-full p-2 fill-current text-green-700">
-                    <svg
-                      class="w-6 h-6 align-middle"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    >
-                      <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-                      <polyline points="22 4 12 14.01 9 11.01"></polyline>
-                    </svg>
-                  </div>
-                  <span class="text-lg ml-3 dark:text-black">Electric</span>
-                </li>
-                <li class="flex items-center">
-                  <div class="rounded-full p-2 fill-current text-green-700">
-                    <svg
-                      class="w-6 h-6 align-middle"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    >
-                      <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-                      <polyline points="22 4 12 14.01 9 11.01"></polyline>
-                    </svg>
-                  </div>
-                  <span class="text-lg ml-3 dark:text-black">Monthly</span>
-                </li>
-                <li class="flex items-center">
-                  <div class="rounded-full p-2 fill-current text-green-700">
-                    <svg
-                      class="w-6 h-6 align-middle"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    >
-                      <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-                      <polyline points="22 4 12 14.01 9 11.01"></polyline>
-                    </svg>
-                  </div>
-                  <span class="text-lg ml-3 dark:text-black">No setup</span>
-                </li>
-              </ul>
-            </div>
-
-            <div class="flex items-center p-8 uppercase">
-              <button
-                class="mt-3 text-lg font-semibold bg-black w-full text-white rounded-lg px-6 py-3 block shadow-xl hover:bg-gray-700"
-              >
-                Seleccionar
-              </button>
-            </div>
-          </div>
-        </div>
+          ))
+        }
       </div>
     </div>
   </div>
 </section>
-
 
 <style>
   :root {
@@ -369,4 +147,3 @@ const INFO_TREEEEE= [
     color: var(--list-text);
   }
 </style>
-

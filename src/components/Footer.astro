@@ -9,7 +9,7 @@ import Facebook from "./icons/Facebook.astro";
     <img
       id="logo"
       class="size-[200px] mx-auto"
-      src="./../public/logo.png"
+      src="../logo.png"
       alt="Guerreros Gym Center logo"
     />
   </div>
@@ -23,51 +23,4 @@ import Facebook from "./icons/Facebook.astro";
   <div id="copyright" class="text-center">
     Creado por Guerreros Gym Center (2024) &#169;
   </div>
-
-  <script>
-    let prefersDarkScheme = window.matchMedia(
-      "(prefers-color-scheme: dark)",
-    ).matches;
-    const logo = document.getElementById("logo");
-    const instagramIcon = document.getElementById("instagram-icon");
-    const facebookIcon = document.getElementById("facebook-icon");
-    const whatsappIcon = document.getElementById("whatsapp-icon");
-    const copyrightText = document.getElementById("copyright");
-
-    function updateLogoTheme() {
-      const logoDark = "./../public/logo.png";
-      const logoLight = "./../public/logo_2.png";
-
-      if (prefersDarkScheme) {
-        logo.src = logoDark;
-        copyrightText.style.color = "white";
-      } else {
-        logo.src = logoLight;
-        copyrightText.style.color = "black";
-      }
-    }
-
-    function updateSocialIconsTheme() {
-      if (!prefersDarkScheme) {
-        instagramIcon.style.filter = "invert(100%)";
-        facebookIcon.style.filter = "invert(100%)";
-        whatsappIcon.style.filter = "invert(100%)";
-      } else {
-        instagramIcon.style.filter = "none";
-        facebookIcon.style.filter = "none";
-        whatsappIcon.style.filter = "none";
-      }
-    }
-
-    updateLogoTheme();
-    updateSocialIconsTheme();
-
-    window
-      .matchMedia("(prefers-color-scheme: dark)")
-      .addEventListener("change", (e) => {
-        prefersDarkScheme = e.matches;
-        updateLogoTheme();
-        updateSocialIconsTheme();
-      });
-  </script>
 </footer>

@@ -5,8 +5,9 @@ import QuestionIcon from "@/icons/Question.astro";
 
 <section class="flex justify-center">
   <div class="mx-10 w-[80%]" id="accordion-open" data-accordion="open">
+    
     <!-- Pregunta 1 -->
-    <h2 class="mb-0" id="accordion-open-heading-1">
+    <h2 class="mb-2" id="accordion-open-heading-1">
       <button
         type="button"
         class="flex items-center justify-between w-full p-5 font-medium rtl:text-right border border-b-0 dark:bg-neutral-800 dark:text-white text-black border-gray-800 focus:ring-2 focus:ring-neutral-200 bg-gray-300 hover:bg-gray-400 dark:hover:bg-gray-600 dark:border-neutral-400 dark:text-neutral-400 dark:focus:ring-neutral-800 gap-3"
@@ -14,10 +15,10 @@ import QuestionIcon from "@/icons/Question.astro";
         aria-expanded="false"
         aria-controls="accordion-open-body-1"
       >
-        <span class="flex items-center text-black dark:text-white">
-          <QuestionIcon />¿Dónde queda el Gimnasio?
+        <span class="flex items-center text-black dark:text-white text-lg">
+          <QuestionIcon class="w-6 h-6 mr-3" />¿Dónde queda el Gimnasio?
         </span>
-        <ArrowIcon />
+        <ArrowIcon class="w-6 h-6" />
       </button>
     </h2>
     <div id="accordion-open-body-1" class="hidden">
@@ -38,7 +39,7 @@ import QuestionIcon from "@/icons/Question.astro";
     </div>
 
     <!-- Pregunta 2 -->
-    <h2 class="mt-2 sm:mt-0" id="accordion-open-heading-2">
+    <h2 class="mt-2 sm:mt-4" id="accordion-open-heading-2">
       <button
         type="button"
         class="flex items-center justify-between w-full p-5 font-medium rtl:text-right border border-b-1 dark:bg-neutral-800 dark:text-white text-black border-gray-800 focus:ring-2 focus:ring-neutral-200 bg-gray-300 hover:bg-gray-400 dark:hover:bg-gray-600 dark:border-neutral-400 dark:text-neutral-400 dark:focus:ring-neutral-800 gap-3"
@@ -46,10 +47,10 @@ import QuestionIcon from "@/icons/Question.astro";
         aria-expanded="false"
         aria-controls="accordion-open-body-2"
       >
-        <span class="flex items-center text-black dark:text-white">
-          <QuestionIcon />¿En qué horario se encuentra abierto?
+        <span class="flex items-center text-black dark:text-white text-lg">
+          <QuestionIcon class="w-6 h-6 mr-3" />¿En qué horario se encuentra abierto?
         </span>
-        <ArrowIcon />
+        <ArrowIcon class="w-6 h-6" />
       </button>
     </h2>
     <div id="accordion-open-body-2" class="hidden">
@@ -66,5 +67,6 @@ import QuestionIcon from "@/icons/Question.astro";
         </p>
       </div>
     </div>
+
   </div>
 </section>
